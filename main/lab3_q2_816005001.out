@@ -27,259 +27,432 @@ csum 0x05
 [0;32mI (91) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
 [0;32mI (102) boot:  2 factory          factory app      00 00 00010000 000f0000[0m
 [0;32mI (114) boot: End of partition table[0m
-[0;32mI (121) esp_image: segment 0: paddr=0x00010010 vaddr=0x40210010 size=0x175a0 ( 95648) map[0m
-[0;32mI (176) esp_image: segment 1: paddr=0x000275b8 vaddr=0x402275b0 size=0x05d34 ( 23860) map[0m
-[0;32mI (187) esp_image: segment 2: paddr=0x0002d2f4 vaddr=0x3ffe8000 size=0x003dc (   988) load[0m
-[0;32mI (188) esp_image: segment 3: paddr=0x0002d6d8 vaddr=0x40100000 size=0x00080 (   128) load[0m
-[0;32mI (201) esp_image: segment 4: paddr=0x0002d760 vaddr=0x40100080 size=0x04558 ( 17752) load[0m
-[0;32mI (222) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (121) esp_image: segment 0: paddr=0x00010010 vaddr=0x40210010 size=0x15914 ( 88340) map[0m
+[0;32mI (173) esp_image: segment 1: paddr=0x0002592c vaddr=0x40225924 size=0x058ac ( 22700) map[0m
+[0;32mI (183) esp_image: segment 2: paddr=0x0002b1e0 vaddr=0x3ffe8000 size=0x003e0 (   992) load[0m
+[0;32mI (184) esp_image: segment 3: paddr=0x0002b5c8 vaddr=0x40100000 size=0x00080 (   128) load[0m
+[0;32mI (198) esp_image: segment 4: paddr=0x0002b650 vaddr=0x40100080 size=0x04558 ( 17752) load[0m
+[0;32mI (218) boot: Loaded app from partition at offset 0x10000[0m
 Inside app_main
-Inside task_example
-[0;32mI (244) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 1| Pullup: 0| Pulldown: 0| Intr:0 [0m
-[0;32mI (250) gpio: GPIO[0]| InputEn: 0| OutputEn: 1| OpenDrain: 1| Pullup: 0| Pulldown: 0| Intr:0 [0m
-[0;32mI (263) main: ADC Result: 0x0 [0]
+[0;32mI (240) main: Integration testing task
 [0m
-[0;32mI (267) main: Fraction: 0 / 16000
+[0;32mI (241) main: UUT: adcResToVoltage()
 [0m
-[0;32mI (273) main: Voltage: 0.0 V
+[0;32mI (243) main: adcResToVoltage() returns both the whole and fractional part of voltage value corresponding to ADC result
+[0m
+[0;32mI (256) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (264) main: Expected output > Whole: 0, Fraction: 0 / 16000
 
 [0m
-[0;32mI (1278) main: ADC Result: 0xd71e [55070]
+[0;32mI (1273) main: Test case 2: ADC result: 0xa [10]
 [0m
-[0;32mI (1281) main: Fraction: 7070 / 16000
-[0m
-[0;32mI (1283) main: Voltage: 3.4418 V
+[0;32mI (1275) main: Expected output > Whole: 0, Fraction: 10 / 16000
 
 [0m
-[0;32mI (2278) main: ADC Result: 0x1b1f [6943]
+[0;32mI (2273) main: Test case 3: ADC result: 0x5e1f [24095]
 [0m
-[0;32mI (2281) main: Fraction: 6943 / 16000
-[0m
-[0;32mI (2283) main: Voltage: 0.4339 V
+[0;32mI (2275) main: Expected output > Whole: 1, Fraction: 8095 / 16000
 
 [0m
-[0;32mI (3278) main: ADC Result: 0xe1f [3615]
+[0;32mI (3273) main: Test case 4: ADC result: 0x6c1f [27679]
 [0m
-[0;32mI (3281) main: Fraction: 3615 / 16000
-[0m
-[0;32mI (3283) main: Voltage: 0.2259 V
+[0;32mI (3275) main: Expected output > Whole: 1, Fraction: 11679 / 16000
 
 [0m
-[0;32mI (4278) main: ADC Result: 0x1c1f [7199]
+[0;32mI (4273) main: Test case 5: ADC result: 0xffff [65535]
 [0m
-[0;32mI (4281) main: Fraction: 7199 / 16000
-[0m
-[0;32mI (4283) main: Voltage: 0.4499 V
+[0;32mI (4275) main: Expected output > Whole: 4, Fraction: 1535 / 16000
 
 [0m
-[0;32mI (5278) main: ADC Result: 0x161f [5663]
+[0;32mI (5273) main: Test case 1: ADC result: 0x0 [0]
 [0m
-[0;32mI (5281) main: Fraction: 5663 / 16000
-[0m
-[0;32mI (5283) main: Voltage: 0.3539 V
+[0;32mI (5275) main: Expected output > Whole: 0, Fraction: 0 / 16000
 
 [0m
-[0;32mI (6278) main: ADC Result: 0xf1f [3871]
+[0;32mI (6273) main: Test case 2: ADC result: 0xa [10]
 [0m
-[0;32mI (6281) main: Fraction: 3871 / 16000
-[0m
-[0;32mI (6283) main: Voltage: 0.2419 V
+[0;32mI (6275) main: Expected output > Whole: 0, Fraction: 10 / 16000
 
 [0m
-[0;32mI (7278) main: ADC Result: 0x1d1f [7455]
+[0;32mI (7273) main: Test case 3: ADC result: 0x5e1f [24095]
 [0m
-[0;32mI (7281) main: Fraction: 7455 / 16000
-[0m
-[0;32mI (7283) main: Voltage: 0.4659 V
+[0;32mI (7275) main: Expected output > Whole: 1, Fraction: 8095 / 16000
 
 [0m
-[0;32mI (8278) main: ADC Result: 0xc1f [3103]
+[0;32mI (8273) main: Test case 4: ADC result: 0x6c1f [27679]
 [0m
-[0;32mI (8281) main: Fraction: 3103 / 16000
-[0m
-[0;32mI (8283) main: Voltage: 0.1939 V
+[0;32mI (8275) main: Expected output > Whole: 1, Fraction: 11679 / 16000
 
 [0m
-[0;32mI (9278) main: ADC Result: 0x121f [4639]
+[0;32mI (9273) main: Test case 5: ADC result: 0xffff [65535]
 [0m
-[0;32mI (9281) main: Fraction: 4639 / 16000
-[0m
-[0;32mI (9283) main: Voltage: 0.2899 V
+[0;32mI (9275) main: Expected output > Whole: 4, Fraction: 1535 / 16000
 
 [0m
-[0;32mI (10279) main: ADC Result: 0x191f [6431]
+[0;32mI (10274) main: Test case 1: ADC result: 0x0 [0]
 [0m
-[0;32mI (10282) main: Fraction: 6431 / 16000
-[0m
-[0;32mI (10284) main: Voltage: 0.4019 V
+[0;32mI (10276) main: Expected output > Whole: 0, Fraction: 0 / 16000
 
 [0m
-[0;32mI (11279) main: ADC Result: 0x191f [6431]
+[0;32mI (11274) main: Test case 2: ADC result: 0xa [10]
 [0m
-[0;32mI (11282) main: Fraction: 6431 / 16000
-[0m
-[0;32mI (11284) main: Voltage: 0.4019 V
+[0;32mI (11276) main: Expected output > Whole: 0, Fraction: 10 / 16000
 
 [0m
-[0;32mI (12279) main: ADC Result: 0x191f [6431]
+[0;32mI (12274) main: Test case 3: ADC result: 0x5e1f [24095]
 [0m
-[0;32mI (12282) main: Fraction: 6431 / 16000
-[0m
-[0;32mI (12284) main: Voltage: 0.4019 V
+[0;32mI (12276) main: Expected output > Whole: 1, Fraction: 8095 / 16000
 
 [0m
-[0;32mI (13279) main: ADC Result: 0x1c1f [7199]
+[0;32mI (13274) main: Test case 4: ADC result: 0x6c1f [27679]
 [0m
-[0;32mI (13282) main: Fraction: 7199 / 16000
-[0m
-[0;32mI (13284) main: Voltage: 0.4499 V
+[0;32mI (13276) main: Expected output > Whole: 1, Fraction: 11679 / 16000
 
 [0m
-[0;32mI (14279) main: ADC Result: 0x121f [4639]
+[0;32mI (14274) main: Test case 5: ADC result: 0xffff [65535]
 [0m
-[0;32mI (14282) main: Fraction: 4639 / 16000
-[0m
-[0;32mI (14284) main: Voltage: 0.2899 V
+[0;32mI (14276) main: Expected output > Whole: 4, Fraction: 1535 / 16000
 
 [0m
-[0;32mI (15279) main: ADC Result: 0xa1f [2591]
+[0;32mI (15274) main: Test case 1: ADC result: 0x0 [0]
 [0m
-[0;32mI (15282) main: Fraction: 2591 / 16000
-[0m
-[0;32mI (15284) main: Voltage: 0.1619 V
+[0;32mI (15276) main: Expected output > Whole: 0, Fraction: 0 / 16000
 
 [0m
-[0;32mI (16279) main: ADC Result: 0xf1f [3871]
+[0;32mI (16274) main: Test case 2: ADC result: 0xa [10]
 [0m
-[0;32mI (16282) main: Fraction: 3871 / 16000
-[0m
-[0;32mI (16284) main: Voltage: 0.2419 V
+[0;32mI (16276) main: Expected output > Whole: 0, Fraction: 10 / 16000
 
 [0m
-[0;32mI (17279) main: ADC Result: 0xb1f [2847]
+[0;32mI (17274) main: Test case 3: ADC result: 0x5e1f [24095]
 [0m
-[0;32mI (17282) main: Fraction: 2847 / 16000
-[0m
-[0;32mI (17284) main: Voltage: 0.1779 V
+[0;32mI (17276) main: Expected output > Whole: 1, Fraction: 8095 / 16000
 
 [0m
-[0;32mI (18279) main: ADC Result: 0x1a1f [6687]
+[0;32mI (18274) main: Test case 4: ADC result: 0x6c1f [27679]
 [0m
-[0;32mI (18282) main: Fraction: 6687 / 16000
-[0m
-[0;32mI (18284) main: Voltage: 0.4179 V
+[0;32mI (18276) main: Expected output > Whole: 1, Fraction: 11679 / 16000
 
 [0m
-[0;32mI (19279) main: ADC Result: 0xd1f [3359]
+[0;32mI (19274) main: Test case 5: ADC result: 0xffff [65535]
 [0m
-[0;32mI (19282) main: Fraction: 3359 / 16000
-[0m
-[0;32mI (19284) main: Voltage: 0.2099 V
+[0;32mI (19276) main: Expected output > Whole: 4, Fraction: 1535 / 16000
 
 [0m
-[0;32mI (20280) main: ADC Result: 0x191f [6431]
+[0;32mI (20275) main: Test case 1: ADC result: 0x0 [0]
 [0m
-[0;32mI (20283) main: Fraction: 6431 / 16000
-[0m
-[0;32mI (20285) main: Voltage: 0.4019 V
+[0;32mI (20277) main: Expected output > Whole: 0, Fraction: 0 / 16000
 
 [0m
-[0;32mI (21280) main: ADC Result: 0x181f [6175]
+[0;32mI (21275) main: Test case 2: ADC result: 0xa [10]
 [0m
-[0;32mI (21283) main: Fraction: 6175 / 16000
-[0m
-[0;32mI (21285) main: Voltage: 0.3859 V
+[0;32mI (21277) main: Expected output > Whole: 0, Fraction: 10 / 16000
 
 [0m
-[0;32mI (22280) main: ADC Result: 0x161f [5663]
+[0;32mI (22275) main: Test case 3: ADC result: 0x5e1f [24095]
 [0m
-[0;32mI (22283) main: Fraction: 5663 / 16000
-[0m
-[0;32mI (22285) main: Voltage: 0.3539 V
+[0;32mI (22277) main: Expected output > Whole: 1, Fraction: 8095 / 16000
 
 [0m
-[0;32mI (23280) main: ADC Result: 0x191f [6431]
+[0;32mI (23275) main: Test case 4: ADC result: 0x6c1f [27679]
 [0m
-[0;32mI (23283) main: Fraction: 6431 / 16000
-[0m
-[0;32mI (23285) main: Voltage: 0.4019 V
+[0;32mI (23277) main: Expected output > Whole: 1, Fraction: 11679 / 16000
 
 [0m
-[0;32mI (24280) main: ADC Result: 0xa1f [2591]
+[0;32mI (24275) main: Test case 5: ADC result: 0xffff [65535]
 [0m
-[0;32mI (24283) main: Fraction: 2591 / 16000
-[0m
-[0;32mI (24285) main: Voltage: 0.1619 V
+[0;32mI (24277) main: Expected output > Whole: 4, Fraction: 1535 / 16000
 
 [0m
-[0;32mI (25280) main: ADC Result: 0x1a1f [6687]
+[0;32mI (25275) main: Test case 1: ADC result: 0x0 [0]
 [0m
-[0;32mI (25283) main: Fraction: 6687 / 16000
-[0m
-[0;32mI (25285) main: Voltage: 0.4179 V
+[0;32mI (25277) main: Expected output > Whole: 0, Fraction: 0 / 16000
 
 [0m
-[0;32mI (26280) main: ADC Result: 0xa1f [2591]
+[0;32mI (26275) main: Test case 2: ADC result: 0xa [10]
 [0m
-[0;32mI (26283) main: Fraction: 2591 / 16000
-[0m
-[0;32mI (26285) main: Voltage: 0.1619 V
+[0;32mI (26277) main: Expected output > Whole: 0, Fraction: 10 / 16000
 
 [0m
-[0;32mI (27280) main: ADC Result: 0xb1f [2847]
+[0;32mI (27275) main: Test case 3: ADC result: 0x5e1f [24095]
 [0m
-[0;32mI (27283) main: Fraction: 2847 / 16000
-[0m
-[0;32mI (27285) main: Voltage: 0.1779 V
+[0;32mI (27277) main: Expected output > Whole: 1, Fraction: 8095 / 16000
 
 [0m
-[0;32mI (28280) main: ADC Result: 0xb1f [2847]
+[0;32mI (28275) main: Test case 4: ADC result: 0x6c1f [27679]
 [0m
-[0;32mI (28283) main: Fraction: 2847 / 16000
-[0m
-[0;32mI (28285) main: Voltage: 0.1779 V
+[0;32mI (28277) main: Expected output > Whole: 1, Fraction: 11679 / 16000
 
 [0m
-[0;32mI (29280) main: ADC Result: 0xe1f [3615]
+[0;32mI (29275) main: Test case 5: ADC result: 0xffff [65535]
 [0m
-[0;32mI (29283) main: Fraction: 3615 / 16000
-[0m
-[0;32mI (29285) main: Voltage: 0.2259 V
+[0;32mI (29277) main: Expected output > Whole: 4, Fraction: 1535 / 16000
 
 [0m
-[0;32mI (30281) main: ADC Result: 0x181f [6175]
+[0;32mI (30276) main: Test case 1: ADC result: 0x0 [0]
 [0m
-[0;32mI (30284) main: Fraction: 6175 / 16000
-[0m
-[0;32mI (30286) main: Voltage: 0.3859 V
+[0;32mI (30278) main: Expected output > Whole: 0, Fraction: 0 / 16000
 
 [0m
-[0;32mI (31281) main: ADC Result: 0x91f [2335]
+[0;32mI (31276) main: Test case 2: ADC result: 0xa [10]
 [0m
-[0;32mI (31284) main: Fraction: 2335 / 16000
-[0m
-[0;32mI (31286) main: Voltage: 0.1459 V
+[0;32mI (31278) main: Expected output > Whole: 0, Fraction: 10 / 16000
 
 [0m
-[0;32mI (32281) main: ADC Result: 0x81f [2079]
+[0;32mI (32276) main: Test case 3: ADC result: 0x5e1f [24095]
 [0m
-[0;32mI (32284) main: Fraction: 2079 / 16000
-[0m
-[0;32mI (32286) main: Voltage: 0.1299 V
+[0;32mI (32278) main: Expected output > Whole: 1, Fraction: 8095 / 16000
 
 [0m
-[0;32mI (33281) main: ADC Result: 0x151f [5407]
+[0;32mI (33276) main: Test case 4: ADC result: 0x6c1f [27679]
 [0m
-[0;32mI (33284) main: Fraction: 5407 / 16000
-[0m
-[0;32mI (33286) main: Voltage: 0.3379 V
+[0;32mI (33278) main: Expected output > Whole: 1, Fraction: 11679 / 16000
 
 [0m
-[0;32mI (34281) main: ADC Result: 0x91f [2335]
+[0;32mI (34276) main: Test case 5: ADC result: 0xffff [65535]
 [0m
-[0;32mI (34284) main: Fraction: 2335 / 16000
+[0;32mI (34278) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
 [0m
-[0;32mI (34286) main: Voltage: 0.1459 V
+[0;32mI (35276) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (35278) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (36276) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (36278) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (37276) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (37278) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (38276) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (38278) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (39276) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (39278) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (40277) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (40279) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (41277) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (41279) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (42277) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (42279) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (43277) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (43279) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (44277) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (44279) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (45277) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (45279) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (46277) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (46279) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (47277) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (47279) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (48277) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (48279) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (49277) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (49279) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (50278) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (50280) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (51278) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (51280) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (52278) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (52280) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (53278) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (53280) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (54278) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (54280) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (55278) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (55280) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (56278) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (56280) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (57278) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (57280) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (58278) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (58280) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (59278) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (59280) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (60279) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (60281) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (61279) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (61281) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (62279) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (62281) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (63279) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (63281) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (64279) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (64281) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (65279) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (65281) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (66279) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (66281) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (67279) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (67281) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (68279) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (68281) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (69279) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (69281) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (70280) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (70282) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (71280) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (71282) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (72280) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (72282) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (73280) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (73282) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (74280) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (74282) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (75280) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (75282) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (76280) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (76282) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (77280) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (77282) main: Expected output > Whole: 1, Fraction: 8095 / 16000
+
+[0m
+[0;32mI (78280) main: Test case 4: ADC result: 0x6c1f [27679]
+[0m
+[0;32mI (78282) main: Expected output > Whole: 1, Fraction: 11679 / 16000
+
+[0m
+[0;32mI (79280) main: Test case 5: ADC result: 0xffff [65535]
+[0m
+[0;32mI (79282) main: Expected output > Whole: 4, Fraction: 1535 / 16000
+
+[0m
+[0;32mI (80281) main: Test case 1: ADC result: 0x0 [0]
+[0m
+[0;32mI (80283) main: Expected output > Whole: 0, Fraction: 0 / 16000
+
+[0m
+[0;32mI (81281) main: Test case 2: ADC result: 0xa [10]
+[0m
+[0;32mI (81283) main: Expected output > Whole: 0, Fraction: 10 / 16000
+
+[0m
+[0;32mI (82281) main: Test case 3: ADC result: 0x5e1f [24095]
+[0m
+[0;32mI (82283) main: Expected output > Whole: 1, Fraction: 8095 / 16000
 
 [0m
 # GNU Make 4.2.1
@@ -289,7 +462,7 @@ Inside task_example
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Nov  5 12:34:21 2021
+# Make data base, printed on Fri Nov  5 20:50:21 2021
 
 # Variables
 
@@ -853,7 +1026,7 @@ CONFIG_FMB_COMM_MODE_TCP_EN = y
 # makefile (from '/opt/esp_sdk/ESP8266_RTOS_SDK/components/app_update/Makefile.projbuild', line 5)
 OTATOOL_PY := python /opt/esp_sdk/ESP8266_RTOS_SDK/components/app_update/otatool.py
 # environment
-OLDPWD = /home/osahon/esp/ecng3006_lab3
+OLDPWD = /home/osahon/esp/ecng3006_lab3/integration_testing/main
 # makefile (from '/home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf', line 123)
 CONFIG_ESP_TLS_SKIP_SERVER_CERT_VERIFY = 
 # makefile (from '/opt/esp_sdk/ESP8266_RTOS_SDK/components/esptool_py/Makefile.projbuild', line 31)
@@ -2272,7 +2445,7 @@ CONFIG_LWIP_MAX_LISTENING_TCP = 16
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/vfs:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:46.598506456
+#  Last modified 2021-11-05 20:44:07.335837181
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2300,7 +2473,7 @@ component-wifi_provisioning-build: check-submodules make_prepare | /home/osahon/
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/mbedtls:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:37.166999662
+#  Last modified 2021-11-05 20:43:56.49577612
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2315,7 +2488,7 @@ component-wifi_provisioning-build: check-submodules make_prepare | /home/osahon/
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/wear_levelling:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:47.082481146
+#  Last modified 2021-11-05 20:44:07.847840048
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2338,7 +2511,7 @@ component-bootloader-build: check-submodules make_prepare | /home/osahon/esp/ecn
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/heap:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:16.876060745
+#  Last modified 2021-11-05 20:43:23.515585927
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2380,7 +2553,7 @@ erase_ota: erase_otadata
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_event/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp_event/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_event
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.10457173
+#  Last modified 2021-11-05 20:43:13.375526065
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2434,7 +2607,7 @@ component-wpa_supplicant-build: check-submodules make_prepare | /home/osahon/esp
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/json/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/json/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/json
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.020576123
+#  Last modified 2021-11-05 20:43:13.291525567
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2463,7 +2636,7 @@ component-wpa_supplicant-build: check-submodules make_prepare | /home/osahon/esp
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/spi_ram/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/spi_ram/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/spi_ram
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.900582397
+#  Last modified 2021-11-05 20:43:13.171524855
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2490,7 +2663,7 @@ print_flash_cmd: partition_table_get_info blank_ota_data
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/tcp_transport/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/tcp_transport/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/tcp_transport
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.888583025
+#  Last modified 2021-11-05 20:43:13.159524783
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2498,7 +2671,7 @@ print_flash_cmd: partition_table_get_info blank_ota_data
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/protocomm/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/protocomm/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/protocomm
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.920581352
+#  Last modified 2021-11-05 20:43:13.191524973
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2513,7 +2686,7 @@ print_flash_cmd: partition_table_get_info blank_ota_data
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp8266/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp8266/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp8266
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.116571103
+#  Last modified 2021-11-05 20:43:13.39152616
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2529,7 +2702,7 @@ print_flash_cmd: partition_table_get_info blank_ota_data
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/freertos/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/freertos/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/freertos
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.044574868
+#  Last modified 2021-11-05 20:43:13.319525733
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2544,7 +2717,7 @@ print_flash_cmd: partition_table_get_info blank_ota_data
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/lwip:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:29.951376991
+#  Last modified 2021-11-05 20:43:40.9476873
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2552,7 +2725,7 @@ print_flash_cmd: partition_table_get_info blank_ota_data
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/lwip/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/lwip/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/lwip
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.988577796
+#  Last modified 2021-11-05 20:43:13.259525377
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2572,7 +2745,7 @@ print_flash_cmd: partition_table_get_info blank_ota_data
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/vfs/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/vfs/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/vfs
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.876583653
+#  Last modified 2021-11-05 20:43:13.147524712
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2596,7 +2769,7 @@ component-heap-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/pthread/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/pthread/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/pthread
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.916581561
+#  Last modified 2021-11-05 20:43:13.187524949
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2604,7 +2777,7 @@ component-heap-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/spi_flash/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/spi_flash/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/spi_flash
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.908581979
+#  Last modified 2021-11-05 20:43:13.179524901
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2612,7 +2785,7 @@ component-heap-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/openssl:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:43.066691146
+#  Last modified 2021-11-05 20:44:03.095813382
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2620,7 +2793,7 @@ component-heap-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/protobuf-c:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:43.586663954
+#  Last modified 2021-11-05 20:44:03.92781806
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2701,7 +2874,7 @@ component-spiffs-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/bui
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/freemodbus/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/freemodbus/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/freemodbus
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.052574449
+#  Last modified 2021-11-05 20:43:13.32752578
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2729,7 +2902,7 @@ component-esp_http_client-build: check-submodules make_prepare | /home/osahon/es
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/bootloader/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/bootloader/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/bootloader
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.152569221
+#  Last modified 2021-11-05 20:43:13.427526374
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2803,7 +2976,7 @@ component-protobuf-c-build: check-submodules make_prepare | /home/osahon/esp/ecn
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/libsodium/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/libsodium/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/libsodium
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.012576541
+#  Last modified 2021-11-05 20:43:13.283525519
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2846,7 +3019,7 @@ component-log-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build/
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/nvs_flash:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:42.642713317
+#  Last modified 2021-11-05 20:44:02.431809644
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2894,7 +3067,7 @@ monitor:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/newlib:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:38.078951973
+#  Last modified 2021-11-05 20:43:57.483781715
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2917,7 +3090,7 @@ component-wpa_supplicant-clean: | /home/osahon/esp/ecng3006_lab3/integration_tes
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/pthread:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:43.862649523
+#  Last modified 2021-11-05 20:44:04.367820532
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2925,7 +3098,7 @@ component-wpa_supplicant-clean: | /home/osahon/esp/ecng3006_lab3/integration_tes
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/wifi_provisioning:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:47.086480938
+#  Last modified 2021-11-05 20:44:07.855840093
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -2997,7 +3170,7 @@ component-esptool_py-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_https_ota:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:12.920267607
+#  Last modified 2021-11-05 20:43:19.403561732
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3050,7 +3223,7 @@ component-nvs_flash-build: check-submodules make_prepare | /home/osahon/esp/ecng
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_ringbuf/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp_ringbuf/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_ringbuf
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.068573613
+#  Last modified 2021-11-05 20:43:13.343525875
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3165,7 +3338,7 @@ component-pthread-build: check-submodules make_prepare | /home/osahon/esp/ecng30
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/heap/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/heap/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/heap
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.040575077
+#  Last modified 2021-11-05 20:43:13.311525685
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3173,7 +3346,7 @@ component-pthread-build: check-submodules make_prepare | /home/osahon/esp/ecng30
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/wear_levelling/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/wear_levelling/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/wear_levelling
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.868584071
+#  Last modified 2021-11-05 20:43:13.139524665
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3260,7 +3433,7 @@ component-esp_event-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/mdns:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:37.170999452
+#  Last modified 2021-11-05 20:43:56.499776143
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3268,7 +3441,7 @@ component-esp_event-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/spi_flash:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:44.074638437
+#  Last modified 2021-11-05 20:44:04.723822532
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3298,7 +3471,7 @@ component-main-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_common/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp_common/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_common
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.108571522
+#  Last modified 2021-11-05 20:43:13.383526113
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3371,7 +3544,7 @@ partition_table_get_info: /home/osahon/esp/ecng3006_lab3/integration_testing/bui
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/console:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:08.664490157
+#  Last modified 2021-11-05 20:43:14.9155352
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3415,7 +3588,7 @@ component-esp_http_server-build: check-submodules make_prepare | /home/osahon/es
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/tcpip_adapter:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:46.198527371
+#  Last modified 2021-11-05 20:44:06.915834829
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3432,7 +3605,7 @@ defconfig: | check_python_dependencies
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/openssl/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/openssl/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/openssl
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.936580515
+#  Last modified 2021-11-05 20:43:13.207525068
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3447,7 +3620,7 @@ defconfig: | check_python_dependencies
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp8266:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:55.446043787
+#  Last modified 2021-11-05 20:44:18.319898346
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3476,7 +3649,7 @@ component-esp_common-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_http_server:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:12.860270745
+#  Last modified 2021-11-05 20:43:19.347561402
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3505,7 +3678,7 @@ component-mdns-build: check-submodules make_prepare | /home/osahon/esp/ecng3006_
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/protobuf-c/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/protobuf-c/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/protobuf-c
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.928580934
+#  Last modified 2021-11-05 20:43:13.199525021
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3659,7 +3832,7 @@ component-protocomm-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_http_client/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp_http_client/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_http_client
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.088572567
+#  Last modified 2021-11-05 20:43:13.363525994
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3690,7 +3863,7 @@ size-files: /home/osahon/esp/ecng3006_lab3/integration_testing/build/i2c.elf | c
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/coap:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:08.012524251
+#  Last modified 2021-11-05 20:43:14.251531263
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3706,7 +3879,7 @@ size: /home/osahon/esp/ecng3006_lab3/integration_testing/build/i2c.elf | check_p
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp-wolfssl/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp-wolfssl/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp-wolfssl
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.124570685
+#  Last modified 2021-11-05 20:43:13.399526207
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3766,7 +3939,7 @@ all: all_binaries blank_ota_data | check_python_dependencies
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/fatfs:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:13.864218245
+#  Last modified 2021-11-05 20:43:20.359567367
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3789,7 +3962,7 @@ component-tcp_transport-clean: | /home/osahon/esp/ecng3006_lab3/integration_test
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/app_update/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/app_update/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/app_update
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.168568384
+#  Last modified 2021-11-05 20:43:13.443526469
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3804,7 +3977,7 @@ ldgen-clean:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/main:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:30.015373645
+#  Last modified 2021-11-05 20:43:41.211688821
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3812,7 +3985,7 @@ ldgen-clean:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/mbedtls/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/mbedtls/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/mbedtls
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.972578633
+#  Last modified 2021-11-05 20:43:13.243525282
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3827,7 +4000,7 @@ ldgen-clean:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/wifi_provisioning/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/wifi_provisioning/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/wifi_provisioning
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.860584489
+#  Last modified 2021-11-05 20:43:13.131524617
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3903,7 +4076,7 @@ help:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/wpa_supplicant/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/wpa_supplicant/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/wpa_supplicant
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.852584908
+#  Last modified 2021-11-05 20:43:13.12352457
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -3923,7 +4096,7 @@ erase_otadata: /opt/esp_sdk/ESP8266_RTOS_SDK/components/partition_table/partitio
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_https_ota/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp_https_ota/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_https_ota
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.076573195
+#  Last modified 2021-11-05 20:43:13.351525923
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3944,7 +4117,7 @@ erase_otadata: /opt/esp_sdk/ESP8266_RTOS_SDK/components/partition_table/partitio
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/freertos:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:16.624073923
+#  Last modified 2021-11-05 20:43:23.399585246
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -3973,7 +4146,7 @@ component-libsodium-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/jsmn:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:17.312037946
+#  Last modified 2021-11-05 20:43:23.967588581
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4005,7 +4178,7 @@ component-esp_ringbuf-clean: | /home/osahon/esp/ecng3006_lab3/integration_testin
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/partition_table/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/partition_table/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/partition_table
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.932580725
+#  Last modified 2021-11-05 20:43:13.199525021
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4013,7 +4186,7 @@ component-esp_ringbuf-clean: | /home/osahon/esp/ecng3006_lab3/integration_testin
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp-tls:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:08.924476562
+#  Last modified 2021-11-05 20:43:15.183536788
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4057,7 +4230,7 @@ partition_table-clean:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/mqtt:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:37.714971006
+#  Last modified 2021-11-05 20:43:57.079779428
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4078,7 +4251,7 @@ partition_table-clean:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/mdns/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/mdns/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/mdns
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.964579051
+#  Last modified 2021-11-05 20:43:13.235525234
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4136,7 +4309,7 @@ component-newlib-build: check-submodules make_prepare | /home/osahon/esp/ecng300
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp-wolfssl:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:08.932476143
+#  Last modified 2021-11-05 20:43:15.187536812
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4175,7 +4348,7 @@ build/i2c.app2.bin: build/i2c.app1.bin
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/tcpip_adapter/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/tcpip_adapter/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/tcpip_adapter
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.880583444
+#  Last modified 2021-11-05 20:43:13.151524736
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4183,7 +4356,7 @@ build/i2c.app2.bin: build/i2c.app1.bin
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/console/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/console/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/console
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.136570057
+#  Last modified 2021-11-05 20:43:13.411526279
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4206,7 +4379,7 @@ component-heap-build: check-submodules make_prepare | /home/osahon/esp/ecng3006_
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_http_server/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp_http_server/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_http_server
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.084572777
+#  Last modified 2021-11-05 20:43:13.355525947
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4291,7 +4464,7 @@ component-jsmn-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/log:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:24.479663126
+#  Last modified 2021-11-05 20:43:32.231636854
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4314,13 +4487,13 @@ component-jsmn-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 /dev/ttyUSB0:
 #  Command line target.
 #  Implicit rule search has been done.
-#  Last modified 2021-11-05 12:32:24.161891931
+#  Last modified 2021-11-05 20:48:24.161891931
 #  File has been updated.
 #  Successfully updated.
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/http_parser:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:17.264040456
+#  Last modified 2021-11-05 20:43:23.915588275
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4335,7 +4508,7 @@ component-jsmn-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_gdbstub:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:11.868322617
+#  Last modified 2021-11-05 20:43:18.343555477
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4378,7 +4551,7 @@ component-jsmn-build: check-submodules make_prepare | /home/osahon/esp/ecng3006_
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/partition_table:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.932580725
+#  Last modified 2021-11-05 20:43:13.199525021
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4510,7 +4683,7 @@ bootloader-clean: /home/osahon/esp/ecng3006_lab3/integration_testing/build/inclu
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/coap/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/coap/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/coap
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.144569639
+#  Last modified 2021-11-05 20:43:13.419526327
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4570,7 +4743,7 @@ component-protobuf-c-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/fatfs/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/fatfs/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/fatfs
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.060574031
+#  Last modified 2021-11-05 20:43:13.335525828
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4600,7 +4773,7 @@ component-esp-wolfssl-clean: | /home/osahon/esp/ecng3006_lab3/integration_testin
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/bootloader_support:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:08.00852446
+#  Last modified 2021-11-05 20:43:14.24753124
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4624,7 +4797,7 @@ clean: bootloader-clean ota-clean partition_table-clean app-clean bootloader-cle
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/main/component_project_vars.mk: /home/osahon/esp/ecng3006_lab3/integration_testing/main/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/main
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.980578215
+#  Last modified 2021-11-05 20:43:13.251525329
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4646,7 +4819,7 @@ blank_ota_data: /home/osahon/esp/ecng3006_lab3/integration_testing/build/ota_dat
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/app_update:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.540548932
+#  Last modified 2021-11-05 20:43:13.8195287
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4661,7 +4834,7 @@ blank_ota_data: /home/osahon/esp/ecng3006_lab3/integration_testing/build/ota_dat
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/nvs_flash/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/nvs_flash/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/nvs_flash
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.944580097
+#  Last modified 2021-11-05 20:43:13.215525116
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4740,7 +4913,7 @@ component-freertos-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/b
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/newlib/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/newlib/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/newlib
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.952579678
+#  Last modified 2021-11-05 20:43:13.223525163
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4865,7 +5038,7 @@ app2: all
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/mqtt/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/mqtt/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/mqtt
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.95657947
+#  Last modified 2021-11-05 20:43:13.227525186
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4951,7 +5124,7 @@ component-esp_event-build: check-submodules make_prepare | /home/osahon/esp/ecng
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_event:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:11.724330147
+#  Last modified 2021-11-05 20:43:18.199554627
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4983,7 +5156,7 @@ build/i2c.ota.bin: build/i2c.app2.bin
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/jsmn/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/jsmn/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/jsmn
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.028575704
+#  Last modified 2021-11-05 20:43:13.299525614
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -4991,7 +5164,7 @@ build/i2c.ota.bin: build/i2c.app2.bin
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/spi_ram:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:44.238629861
+#  Last modified 2021-11-05 20:44:04.91582361
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5062,7 +5235,7 @@ component-freemodbus-build: check-submodules make_prepare | /home/osahon/esp/ecn
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/tcp_transport:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:45.902542849
+#  Last modified 2021-11-05 20:44:06.579832945
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5146,7 +5319,7 @@ component-esp_http_server-clean: | /home/osahon/esp/ecng3006_lab3/integration_te
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_common:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:11.316351482
+#  Last modified 2021-11-05 20:43:17.815552359
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5154,7 +5327,7 @@ component-esp_http_server-clean: | /home/osahon/esp/ecng3006_lab3/integration_te
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/http_parser/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/http_parser/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/http_parser
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.032575496
+#  Last modified 2021-11-05 20:43:13.303525638
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5170,7 +5343,7 @@ component-spi_ram-build: check-submodules make_prepare | /home/osahon/esp/ecng30
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/log/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/log/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/log
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.996577378
+#  Last modified 2021-11-05 20:43:13.267525424
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5214,7 +5387,7 @@ menuconfig: /opt/esp_sdk/ESP8266_RTOS_SDK/tools/kconfig/mconf-idf | check_python
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_gdbstub/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp_gdbstub/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_gdbstub
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.096572149
+#  Last modified 2021-11-05 20:43:13.371526042
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5293,7 +5466,7 @@ build-components:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp-tls/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esp-tls/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp-tls
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.128570475
+#  Last modified 2021-11-05 20:43:13.403526232
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5301,7 +5474,7 @@ build-components:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/freemodbus:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:15.89611199
+#  Last modified 2021-11-05 20:43:22.555580288
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5309,7 +5482,7 @@ build-components:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/spiffs/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/spiffs/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/spiffs
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:06.896582607
+#  Last modified 2021-11-05 20:43:13.167524831
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5317,7 +5490,7 @@ build-components:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esptool_py/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/esptool_py/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/esptool_py
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.064573822
+#  Last modified 2021-11-05 20:43:13.335525828
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5332,7 +5505,7 @@ build-components:
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/bootloader:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.152569221
+#  Last modified 2021-11-05 20:43:13.427526374
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5376,7 +5549,7 @@ component-spi_flash-build: check-submodules make_prepare | /home/osahon/esp/ecng
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_http_client:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:12.276301283
+#  Last modified 2021-11-05 20:43:18.751557886
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5391,7 +5564,7 @@ component-spi_flash-build: check-submodules make_prepare | /home/osahon/esp/ecng
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/bootloader_support/component_project_vars.mk: /opt/esp_sdk/ESP8266_RTOS_SDK/components/bootloader_support/component.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/common.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/version.mk /opt/esp_sdk/ESP8266_RTOS_SDK/make/component_wrapper.mk /home/osahon/esp/ecng3006_lab3/integration_testing/Makefile /home/osahon/esp/ecng3006_lab3/integration_testing/build/include/config/auto.conf | /home/osahon/esp/ecng3006_lab3/integration_testing/build/bootloader_support
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.14856943
+#  Last modified 2021-11-05 20:43:13.42352635
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5399,7 +5572,7 @@ component-spi_flash-build: check-submodules make_prepare | /home/osahon/esp/ecng
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/libsodium:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:24.411666682
+#  Last modified 2021-11-05 20:43:32.151636389
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5422,7 +5595,7 @@ component-coap-clean: | /home/osahon/esp/ecng3006_lab3/integration_testing/build
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/json:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:17.736015775
+#  Last modified 2021-11-05 20:43:24.48759163
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5458,7 +5631,7 @@ component-esptool_py-build: check-submodules make_prepare | /home/osahon/esp/ecn
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/wpa_supplicant:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:55.154059055
+#  Last modified 2021-11-05 20:44:17.943896264
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5474,7 +5647,7 @@ size-components: /home/osahon/esp/ecng3006_lab3/integration_testing/build/i2c.el
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/protocomm:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:43.590663746
+#  Last modified 2021-11-05 20:44:03.939818127
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5482,7 +5655,7 @@ size-components: /home/osahon/esp/ecng3006_lab3/integration_testing/build/i2c.el
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/spiffs:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:45.470565439
+#  Last modified 2021-11-05 20:44:06.123830389
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5504,7 +5677,7 @@ size-components: /home/osahon/esp/ecng3006_lab3/integration_testing/build/i2c.el
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esptool_py:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:07.064573822
+#  Last modified 2021-11-05 20:43:13.335525828
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5587,7 +5760,7 @@ component-spiffs-build: check-submodules make_prepare | /home/osahon/esp/ecng300
 
 /home/osahon/esp/ecng3006_lab3/integration_testing/build/esp_ringbuf:
 #  Implicit rule search has not been done.
-#  Last modified 2021-11-05 12:31:13.052260705
+#  Last modified 2021-11-05 20:43:19.539562534
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/opt/esp_sdk/ESP8266_RTOS_SDK/make/project.mk', line 571):
@@ -5631,5 +5804,5 @@ component-wear_levelling-clean: | /home/osahon/esp/ecng3006_lab3/integration_tes
 # strcache performance: lookups = 2214 / hit rate = 73%
 # hash-table stats:
 # Load=587/8192=7%, Rehash=0, Collisions=101/2214=5%
-# Finished Make data base on Fri Nov  5 12:34:21 2021
+# Finished Make data base on Fri Nov  5 20:50:21 2021
 
