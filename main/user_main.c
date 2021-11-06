@@ -30,6 +30,8 @@ static const char *TAG = "main";
 volatile uint16_t adc_result;
 volatile uint16_t v_in_whole;
 volatile uint16_t v_in_frac;
+volatile uint16_t exp_whole;
+volatile uint16_t exp_frac;
 // volatile char* v_in_dec;
 
 /**
@@ -72,29 +74,48 @@ static void integration_test_task(void* arg)
 
     ESP_LOGI(TAG, "Integration testing task\n");
     ESP_LOGI(TAG, "UUT: adcResToVoltage()\n");
-    ESP_LOGI(TAG, "adcResToVoltage() returns both the whole and fractional part of voltage value corresponding to ADC result\n");
+    ESP_LOGI(TAG, "adcResToVoltage() determines both the whole and fractional part of voltage value corresponding to ADC result\n\n");
 
     while (1) {
         //init variables
         adc_result = 0;
-        v_in_whole = 0;
-        v_in_frac = 0;
 
         // test cases
         if (i == 1)
+        {
             adc_result = 0x0;     // 0
+            exp_whole = 0;
+            exp_frac = 0;
+        }
         else if (i == 2)
+        {
             adc_result = 0xa;     // 10
+            exp_whole = 0;
+            exp_frac = 10;
+        }
         else if (i == 3)
+        {
             adc_result = 0x5e1f;  // 24095
+            exp_whole = 1;
+            exp_frac = 8095;
+        }
         else if (i == 4)
+        {
             adc_result = 0x6c1f;  // 27679
+            exp_whole = 1;
+            exp_frac = 11679;
+        }
         else if (i == 5)
+        {
             adc_result = 0xffff;  // 65535
+            exp_whole = 4;
+            exp_frac = 1535;
+        }
 
         ESP_LOGI(TAG, "Test case %i: ADC result: 0x%x [%i]\n", i, adc_result, (int)adc_result);
+        ESP_LOGI(TAG, "Expected output > Whole: %i, Fraction: %i / 16000\n", (int)exp_whole, (int)exp_frac);
         adcResToVoltage(&adc_result, &v_in_whole, &v_in_frac);
-        ESP_LOGI(TAG, "Expected output > Whole: %i, Fraction: %i / 16000\n\n", (int)v_in_whole, (int)v_in_frac);
+        ESP_LOGI(TAG, "Output > Whole: %i, Fraction: %i / 16000\n\n", (int)v_in_whole, (int)v_in_frac);
 
         if (i >= 5)
             i = 1;

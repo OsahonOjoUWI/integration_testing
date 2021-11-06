@@ -32,19 +32,23 @@ I () main: adcResToVoltage() determines both the whole and fractional part of vo
 
 I () main: Test case 1: ADC result: 0x0 [0]
 I () main: Expected output > Whole: 0, Fraction: 0 / 16000
+I () main: Output > Whole: 0, Fraction: 0 / 16000
 
 I () main: Test case 2: ADC result: 0xa [10]
 I () main: Expected output > Whole: 0, Fraction: 10 / 16000
+I () main: output > Whole: 0, Fraction: 10 / 16000
 
 I () main: Test case 3: ADC result: 0x5e1f [24095]
 I () main: Expected output > Whole: 1, Fraction: 8095 / 16000
+I () main: output > Whole: 1, Fraction: 8095 / 16000
 
 I () main: Test case 4: ADC result: 0x6c1f [27679]
 I () main: Expected output > Whole: 1, Fraction: 11679 / 16000
+I () main: Output > Whole: 1, Fraction: 11679 / 16000
 
 I () main: Test case 5: ADC result: 0xffff [65535]
 I () main: Expected output > Whole: 4, Fraction: 1535 / 16000
-
+I () main: Output > Whole: 4, Fraction: 1535 / 16000
 
 ```
 
